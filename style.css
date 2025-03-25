@@ -5,3 +5,33 @@
     margin: 0px;
     padding: 0px;
 }
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+#grid {
+    outline: 1px solid white;
+    flex: 0 0 6.25%;
+}
+
+#container {
+    height: 800px;
+    aspect-ratio: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+button {
+    font-size: 24px;
+    padding: 4px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+}
