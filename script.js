@@ -1,7 +1,7 @@
-const container = document.querySelector('#container')
+const container = document.querySelector('#container');
 
 for (let i = 0; i < 256; i++) {
     const divs = document.createElement('div');
-    divs.textContent = 1;
+    divs.setAttribute('id', 'grid');
     container.appendChild(divs);
 }
