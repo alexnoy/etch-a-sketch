@@ -1,10 +1,12 @@
 const container = document.querySelector('#container');
 
-for (let i = 0; i < 256; i++) {
-    const divs = document.createElement('div');
-    divs.setAttribute('id', 'grid');
-    container.appendChild(divs);
-}
+function createGrid(size = 256) {
+    for (let i = 0; i < size; i++) {
+        const divs = document.createElement('div');
+        divs.setAttribute('id', 'grid');
+        container.appendChild(divs);
+    }
+};
 
 let grid = document.querySelectorAll('#grid');
 grid.forEach(cell => cell.addEventListener('mouseover', function(){
