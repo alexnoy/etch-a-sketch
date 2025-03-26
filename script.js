@@ -5,15 +5,17 @@ function createGrid(size = 256) {
         const divs = document.createElement('div');
         divs.setAttribute('id', 'grid');
         container.appendChild(divs);
+        divs.addEventListener('mouseover', function(){
+            divs.style.backgroundColor = 'grey';
+        });
     }
 };
+createGrid();
 
 let grid = document.querySelectorAll('#grid');
-grid.forEach(cell => cell.addEventListener('mouseover', function(){
-    cell.style.backgroundColor = 'grey';
-}));
 
 const clear = document.querySelector('#clear');
+
 clear.addEventListener('click', function() {
     grid.forEach(cell => cell.style.backgroundColor = '');
 });
