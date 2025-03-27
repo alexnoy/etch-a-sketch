@@ -1,12 +1,22 @@
 const container = document.querySelector('#container');
 
+function rgbValues() {
+    let num = [];
+
+    for (let i = 0; i < 3; i++) {
+        num.push(Math.floor(Math.random() * 256));
+    }
+
+    return num.toString();
+}
+
 function createGrid(size = 256) {
     for (let i = 0; i < size; i++) {
         const divs = document.createElement('div');
         divs.setAttribute('id', 'grid');
         container.appendChild(divs);
         divs.addEventListener('mouseover', function(){
-            divs.style.backgroundColor = 'grey';
+            divs.style.backgroundColor = `rgb(${rgbValues()})`;
         });
     }
 };
@@ -37,6 +47,6 @@ resize.addEventListener('click', function() {
     
     grid.forEach(cell => cell.style.flexBasis = `${100 / size}%`)
     grid.forEach(cell => cell.addEventListener('mouseover', function(){
-        cell.style.backgroundColor = 'grey';
+        cell.style.backgroundColor = `rgb(${rgbValues()})`;
     }));
 });
