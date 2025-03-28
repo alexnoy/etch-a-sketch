@@ -15,14 +15,18 @@ function createGrid(size = 256) {
         const divs = document.createElement('div');
         divs.setAttribute('id', 'grid');
         container.appendChild(divs);
-        divs.addEventListener('mouseover', function(){
-            divs.style.backgroundColor = `rgb(${rgbValues()})`;
-        });
     }
+
+    grid = document.querySelectorAll('#grid')
+
+    grid.forEach(cell => cell.addEventListener('mouseover', function(){
+        cell.style.backgroundColor = `rgb(${rgbValues()})`;
+    }));
 };
-createGrid();
 
 let grid = document.querySelectorAll('#grid');
+
+createGrid();
 
 const clear = document.querySelector('#clear');
 
@@ -42,11 +46,6 @@ resize.addEventListener('click', function() {
     grid.forEach(cell => cell.remove());
 
     createGrid(size ** 2);
-
-    grid = document.querySelectorAll('#grid');
     
-    grid.forEach(cell => cell.style.flexBasis = `${100 / size}%`)
-    grid.forEach(cell => cell.addEventListener('mouseover', function(){
-        cell.style.backgroundColor = `rgb(${rgbValues()})`;
-    }));
+    grid.forEach(cell => cell.style.flexBasis = `${100 / size}%`);
 });
